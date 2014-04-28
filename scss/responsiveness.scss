@@ -1,0 +1,152 @@
+// Large screens
+@media (min-width: 706px) {
+    .two-column > * {
+        float: left;
+        width: 50%;
+        padding: 0 10px;
+    }
+}
+
+// Small screens/tablets
+@media (max-width: 940px) {
+    // 2 column sections
+    #leaderboard {
+        width: leaderboard-width(2);
+
+        .people {
+            width: $people-column-width * 2;
+        }
+    }
+
+    .accounts {
+        width: 100%;
+    }
+
+    .col0, .col1, .col2 {
+        float: none;
+        margin: auto;
+        padding: 0;
+        width: 460px;
+    }
+}
+
+// Smaller tablets in portrait/landscape phones
+@media (max-width: 700px) {
+    .luxury {
+        display: none !important;
+    }
+
+    #hero {
+        h2.top {
+            font-size: 30px;
+        }
+
+        h1 {
+            font-size: 48px;
+        }
+    }
+
+    #leaderboard {
+        width: 100%;
+
+        .people {
+            float: none;
+            width: $people-column-width * 4;
+            margin: 0 auto;
+
+            li {
+                &.luxury { display: none; }
+            }
+        }
+    }
+
+    #footer {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%;
+        text-align: left;
+        width: 480px;
+
+        .social, ul, li {
+            float: none;
+        }
+
+        li, .social a, li a {
+            display: block;
+        }
+
+        li {
+            margin: 0.25em 0;
+            padding: 0.25em 0;
+            border-top: 1px solid #eee;
+
+            &:before {
+                content: none;
+            }
+        }
+    }
+}
+
+// Portrait phones
+@media (max-width: 479px) {
+    body {
+        font-size: 14px;
+    }
+
+    #hero {
+        font-size: 15px;
+        h2.top {
+            letter-spacing: -1px;
+            font-size: 1.33em;
+        }
+
+        h1 {
+            letter-spacing: -1px;
+            font-size: 36px;
+        }
+    }
+
+    #jump {
+        select, input, button {
+            display: block;
+            width: 75%;
+            margin: 1em auto;
+        }
+    }
+
+    #leaderboard {
+        .people {
+            width: $people-column-width * 3;
+
+            li:nth-child(4n) {
+                display: none;
+            }
+        }
+    }
+
+    .box {
+        border-radius: 0;
+        border-left-width: 1px;
+        border-right-width: 1px;
+
+        .on-profile {
+            .picture {
+                width: 100px;
+                height: 100px;
+
+                img {
+                    width: 90px !important;
+                    height: 90px;
+                }
+            }
+
+            .number {
+                font-size: 36px;
+            }
+
+            .pad-sign {
+                padding-left: 23px;
+            }
+        }
+    }
+}

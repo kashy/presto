@@ -1,0 +1,140 @@
+title = "Frequently Asked Questions"
+[---]
+{% extends "templates/about.html" %}
+{% block page %}
+<div class="col1">
+    <dl>
+
+        <dt id="what-gittip">What is Presto?</dt>
+
+        <dd>Presto is a way to give money every week to people and teams you
+        believe in.</dd>
+
+        <!-- <dt id="how-funded">How is Gittip funded?</dt>
+
+        <dd>Gittip is funded on Gittip. As an <a
+            href="http://blog.gittip.com/post/26350459746/the-first-open-company">open
+            company</a>, Gittip, LLC doesn't pay any wages and has no profit.
+        We <a href="/about/#details">charge a fee</a> to cover the things that
+        we ourselves are charged for.</dd> -->
+
+
+        <dt id="one-time-gift">Can I make a one-time gift?</dt>
+
+        <dd>No. Presto is designed for long-term, sustainable funding, and only
+        supports recurring gifts at this time. We will probably offer one-time
+        gifts in the future. The workaround for now is to change your gift amount back to zero after
+        the first week.</dd>
+
+
+        <dt id="not-in-us">I'm not in the U.S., can I still use Presto?</dt>
+
+        <dd>Yes, but moving funds takes more time and the fees are higher.</dd>
+
+
+        <dt id="how-add-funds">How do I add funds to Presto?</dt>
+
+        <dd>There are two ways to add funds to Presto:
+
+        <ol>
+
+            <li><a href="/credit-card.html">Connect a credit card</a>. We will
+            charge you every Thursday to fund the gifts you have set up ($10
+            minimum; we upcharge to cover a processing fee of 2.9% + 30&cent;;
+            expect additional fees from non-U.S. banks).</li>
+
+            <li><a
+                href="mailto:team@presto.ventures?subject=bitcoin%20payin">Email
+            us</a> to request a one-time bitcoin payin (1% + 15&cent;
+            fee).</li>
+
+        </ol>
+
+        </dd>
+
+
+        <dt id="how-withdraw-funds">How do I withdraw funds from Presto?</dt>
+
+        <dd>There are three ways to withdraw funds from Presto:
+
+        <ol>
+
+            <li><a href="https://www.presto.ventures/bank-account.html">Connect a
+                bank account</a>. Funds will be deposited every Friday (no fee;
+            U.S.-only).</li>
+
+            <li><a
+                href="mailto:team@presto.ventures?subject=configuring%20PayPal">Email
+            us</a> to set up a weekly PayPal payout (unlimited payout; 2% fee capped at
+            $20).</li>
+
+            <li><a
+                href="mailto:team@presto.ventures?subject=bitcoin%20payout">Email
+            us</a> to request a one-time bitcoin payout (1% + 15&cent;
+            fee).</li>
+
+        </ol>
+
+        </dd>
+
+    </dl>
+</div>
+<div class="col2">
+    <dl>
+
+        <dt id="maximum-amount">Is there a minimum or maximum amount I can give or receive?</dt>
+
+        <dd>There are no restrictions on the total amount you can give
+        or receive.</dd>
+
+        <dd>The minimum you can give any one person is 1¢ per week. To minimize
+        processing fees, we charge your credit card at least $10 at a time
+        (anything extra stays in Presto to use in future weeks).</dd>
+
+        <dd>The maximum you can give any one person is $100 per week. This
+        helps reduce volatity by reducing how dependant income is on a few
+        large patrons.</dd>
+
+
+        <dt id="support-organizations">Can I use Presto to support organizations?</dt>
+
+        <dd>Yes. Some accounts on Presto represent organizations.</dd>
+
+
+        <dt id="whats-point-of-communities">What's the point of communities?</dt>
+
+        <dd><a href="/for/">Communities</a> let you identify with groups
+        of people that share your interests, such as <a href="/for/python/">
+        programming languages</a> and <a href="/for/korea/">geographical
+        regions</a>.
+
+
+        <dt id="how-know-right-person">How do I know my gifts are being received by the right person?</dt>
+
+        <dd>You can follow links to Presto from a trusted source like a person
+        or organization's website. Also, Twitter verifies accounts in instances
+        where this is particularly relevant, so check their Twitter account
+        carefully if it's linked.</dd>
+
+
+        <dt id="taxable">Do I have to pay taxes on the income I receive from Presto?</dt>
+
+        <dd>We can't offer blanket legal advice on that, sorry. You'll have to
+        talk to a lawyer.</dd>
+
+
+        <dt id="tax-deductible">Are gifts I give through Presto tax-deductible?</dt>
+
+        <dd>No.</dd>
+
+
+        <dt id="dont-want-gifts">I don't want to receive gifts, I just want to give them. What should
+        I do?</dt>
+
+        <dd>Please select &ldquo;I'm here as a patron, and politely decline to
+        receive gifts.&rdquo; as your personal funding goal. We won't show gift
+        buttons to others on your profile.</dd>
+
+    </dl>
+</div>
+{% endblock %}

@@ -1,0 +1,68 @@
+title = "Charts"
+[---]
+{% extends "templates/about.html" %}
+
+{% block scripts %}
+<script>
+$(document).ready(function() {
+    jQuery.get('/about/charts.json', Gittip.charts.make);
+});
+</script>
+
+{{ super() }}
+{% endblock %}
+
+{% block page %}
+<div class="two-column">
+    <div class="chart-wrapper">
+        <a name="users"></a>
+        <h2>Total Users</h2>
+        <p class="note">Anyone who's ever created an account on Presto</p>
+        <div class="chart" id="chart_total_users"></div>
+        <div class="x-axis">weeks</div>
+    </div>
+
+    <div class="chart-wrapper">
+        <a name="active"></a>
+        <h2>Active Users</h2>
+        <p class="note">Users that gave and/or received money within Presto (per week)</p>
+        <div class="chart" id="chart_active_users"></div>
+        <div class="x-axis">weeks</div>
+    </div>
+
+    <div class="chart-wrapper">
+        <a name="cumulative-gifts"></a>
+        <h2>Total Gifts ($)</h2>
+        <p class="note">Money transferred within Presto (cumulative)</p>
+        <div class="chart" id="chart_total_gifts"></div>
+        <div class="x-axis">weeks</div>
+    </div>
+
+    <div class="chart-wrapper">
+        <a name="gifts"></a>
+        <h2>Weekly Gifts ($)</h2>
+        <p class="note">Money transferred within Presto (per week)</p>
+        <div class="chart" id="chart_weekly_gifts"></div>
+        <div class="x-axis">weeks</div>
+    </div>
+
+    <div class="chart-wrapper newline">
+        <a name="charges"></a>
+        <h2>Charges ($)</h2>
+        <p class="note">Money moved into Presto via credit card<br /></p>
+        <div class="chart" id="chart_charges"></div>
+        <div class="x-axis">weeks</div>
+    </div>
+
+    <div class="chart-wrapper">
+        <a name="withdrawals"></a>
+        <h2>Withdrawals ($)</h2>
+
+        <p class="note">Money withdrawn from Presto to a bank account<br /></p>
+
+        <div class="chart" id="chart_withdrawals"></div>
+        <div class="x-axis">weeks</div>
+    </div>
+</div>
+
+{% endblock %}

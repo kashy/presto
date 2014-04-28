@@ -1,0 +1,16 @@
+title = "Fraud"
+[---]
+{% extends "templates/about.html" %}
+{% block page %}
+
+<div class="col0">
+    This page collects Presto fraud incident reports.
+    <ol>
+        <li></li>
+    </ol>
+
+    <br />
+
+    <p>If you suspect fraud, please report it to team@presto.ventures</a></p>
+</div>
+{% endblock %}

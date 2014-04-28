@@ -1,0 +1,74 @@
+#profile-edit {
+    button.save, button.cancel {
+        display: none;
+    }
+
+    .username {
+        input {
+            width: 6em;
+            display: none;
+        }
+        .warning {
+            margin-top: 5px;
+            display: block;
+            color: red;
+            display: none;
+        }
+    }
+    .statement {
+        div.edit {
+            display: none;
+        }
+        textarea {
+            width: 98%;
+            height: 126pt; /* 18pt * 7 rows; overriden in js */
+            padding: 1%;
+            margin-top: 8px;
+        }
+        .help {
+            font: normal 12px/12px $Helvetica;
+        }
+    }
+    .goal {
+        table.edit {
+            display: none;
+        }
+        td {
+            text-align: left;
+        }
+        #goal-custom {
+            text-align: right;
+            width: 6pc;
+        }
+        li {
+            margin-bottom: 1em;
+        }
+    }
+    .api-key {
+        span {
+            font: normal 10pt/12pt $Mono;
+            background: #EEE;
+            padding: 3pt;
+        }
+        .buttons {
+            padding: 3pt 0;
+            button {
+                margin-top: 3pt;
+            }
+        }
+    }
+    .email-submit, .bitcoin-submit {
+        .address input {
+            width: 100%;
+            margin: 5px 0;
+        }
+        .buttons {
+            margin-top: 3pt;
+        }
+    }
+    .bitcoin {
+        .address {
+            font-size: 13px;
+        }
+    }
+}

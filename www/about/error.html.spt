@@ -1,0 +1,5 @@
+import os
+from aspen import Response
+[---]
+raise Response(int(qs['code']))
+[---]

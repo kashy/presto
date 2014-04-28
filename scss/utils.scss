@@ -1,0 +1,24 @@
+// Utility rules
+
+.group:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.hidden {
+    display: none;
+}
+.clear {
+    clear: both;
+}
+.centered {
+    margin: 0 auto;
+}
+.highlight {
+    background: #FFFE26;
+}
+.word-wrap {
+    white-space: pre-wrap;
+}

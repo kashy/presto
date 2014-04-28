@@ -1,0 +1,163 @@
+{% from 'templates/auth.html' import auth_button with context %}
+{% from 'templates/account-row.html' import account_row with context %}
+
+<h2>Social Profiles</h2>
+<table class="accounts">
+
+    <!-- social profiles -->
+    <!-- {% for platform in website.social_profiles %}
+        {% if accounts[platform.name] or user.participant == participant %}
+            {{ account_row(platform, accounts, auth_button) }}
+        {% endif %}
+    {% endfor %} -->
+
+    {% if user.participant == participant or user.ADMIN %}
+    <tr>
+        <td class="account-type">
+            <img src="{{ website.asset_url }}/email.png" /><!-- This needs to change -->
+        </td>
+        <td class="account-details">
+            <div class="account-type">Email Address (Private)</div>
+            {% if not user.ANON and user.participant == participant %}
+                <div class="email">
+            {% else %}
+                <div>
+            {% endif %}
+                {% if participant.email %}
+                    <a class="address email-address" href="javascript:;">
+                      {{ participant.email.address }}
+                    </a>
+                    <button class="toggle-email">Edit</button>
+                {% else %}
+                    <span class="none">None</span>
+                    <button class="toggle-email">+ Add</button>
+                {% endif %}
+            </div>
+
+            <form class="email-submit">
+                <div class="address">
+                   <input type="email" class="email hidden"
+                        {% if participant.email %}
+                            value="{{ participant.email.address }}"
+                        {% endif %}
+                    >
+                </div>
+                <div class="buttons">
+                    <button type="submit" class="email hidden">Save</button>
+                    <button type="cancel" class="email cancel hidden">Cancel</button>
+                </div>
+            </form>
+        </td>
+    </tr>
+    {% endif %}
+</table>
+
+{% if not user.ANON and user.participant == participant %}
+<h2>Other Receiving Options</h2>
+{% else %}
+<h2>Other Giving Options</h2>
+{% endif %}
+<table class="accounts">
+
+    <!-- one-off receiving options -->
+    <tr>
+        <td class="account-type">
+            <img src="{{ website.asset_url }}/bitcoin.png" />
+        </td>
+        <td class="account-details">
+            <div class="account-type">Bitcoin</div>
+            {% if not user.ANON and user.participant == participant %}
+                <div class="bitcoin">
+            {% else %}
+                <div>
+            {% endif %}
+                {% if participant.bitcoin_address %}
+                    <a class="address" rel="me" href="https://blockchain.info/address/{{ participant.bitcoin_address }}">
+                      {{ participant.bitcoin_address }}
+                    </a>
+                    {% if not user.ANON and user.participant == participant %}
+                    <button class="toggle-bitcoin">Edit</button>
+                    {% endif %}
+
+                {% else %}
+                    <span class="none">None</span>
+                    {% if not user.ANON and user.participant == participant %}
+                        <button class="toggle-bitcoin">+ Add</button>
+                    {% endif %}
+                {% endif %}
+            </div>
+            <form class="bitcoin-submit">
+                <div class="address">
+                    <input type="text" class="bitcoin hidden"
+                        {% if participant.bitcoin_address %}
+                            value="{{ participant.bitcoin_address }}"
+                        {% endif %}
+                    >
+                </div>
+                <div class="buttons">
+                    <button type="submit" class="bitcoin hidden">Save</button>
+                    <button type="cancel" class="bitcoin cancel hidden">Cancel</button>
+                </div>
+            </form>
+        </td>
+    </tr>
+    {{ account_row(website.platforms.venmo, accounts, auth_button) }}
+</table>
+
+{% if not user.ANON and (user.ADMIN or user.participant == participant) %}
+    <h2>Adding Money
+        {% if user.ADMIN and participant.balanced_customer_href %}
+            <a href="https://dashboard.balancedpayments.com/#/{{ participant.balanced_customer_href }}"
+               title="Go to Balanced Dashboard">
+                <span class="payments-by"></span>
+            </a>
+        {% else %}
+            <span class="payments-by"></span>
+        {% endif %}
+    </h2>
+    <table class="accounts">
+        <tr>
+            <td class="account-type">
+                <img src="{{ website.asset_url }}/card_icon.jpg" />
+            </td>
+            <td class="account-details">
+                <div class="account-type">Credit card</div>
+                {% if participant.last_bill_result != "" %}
+                    <span class="none">None</span>
+                    <a class="button auth-button" href="/credit-card.html">+ Add</a>
+                {% else %}
+                    <a class="account-username" href="/credit-card.html">Added</a>
+                    <a class="button auth-button" href="/credit-card.html">Edit</a>
+                {% endif %}
+            </td>
+        </tr>
+    </table>
+
+    <h2>Withdrawing Money
+        {% if user.ADMIN and participant.balanced_customer_href %}
+            <a href="https://dashboard.balancedpayments.com/#/marketplaces/MP12Xw5lL6iaILtqImIoroDL{{ participant.balanced_customer_href }}"
+               title="Go to Balanced Dashboard">
+                <div class="payments-by"></div>
+            </a>
+        {% else %}
+            <div class="payments-by"></div>
+        {% endif %}
+    </h2>
+    <table class="accounts">
+        <tr>
+            <td class="account-type">
+                <img src="{{ website.asset_url }}/bank_account_icon.jpg" />
+            </td>
+            <td class="account-details">
+                <div class="account-type">Bank account</div>
+                {% if participant.last_ach_result != "" %}
+                    <span class="none">None</span>
+                    <a class="button auth-button" href="/bank-account.html">+ Add</a>
+                {% else %}
+                    <a class="account-username" href="/bank-account.html">Added</a>
+                    <a class="button auth-button" href="/bank-account.html">Edit</a>
+                {% endif %}
+            </td>
+        </tr>
+    </table>
+{% endif %}

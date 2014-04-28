@@ -1,0 +1,21 @@
+language: python
+addons:
+  postgresql: 9.3
+before_install:
+ - node --version
+install: make env node_modules
+before_script:
+ - echo "DATABASE_URL=dbname=gittip" | tee -a tests/local.env local.env
+ - psql -U postgres -c 'CREATE DATABASE "gittip";'
+ - if [ "`git rev-parse --abbrev-ref HEAD`" = "master" ]; then rm -rf tests/fixtures; fi
+script: make test
+notifications:
+  email: false
+  irc:
+    channels:
+      - "irc.freenode.org#gittip"
+    on_success: change
+    on_failure: always
+    template:
+      - "%{repository} (%{branch}:%{commit} by %{author}): %{message} (%{build_url})"
+    skip_join: true

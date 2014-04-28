@@ -1,0 +1,586 @@
+#header {
+    background: white;
+    padding: 10px 0;
+    position: relative;
+
+    td {
+        text-align: center;
+        vertical-align: middle;
+    }
+    h1 {
+        line-height: 100%;
+    }
+    .logo {
+        padding-right: 18px;
+    }
+    .motto {
+        border-left: 2px solid $light-gray;
+        font: bold 10px $Helvetica;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        padding-left: 18px;
+        text-align: left;
+	a {
+	    color: inherit;
+	}
+    }
+    .sign-in, .you-are {
+        padding-top: 18px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        font: normal 13px $Helvetica;
+        text-align: right;
+    }
+    .you-are {
+        padding-top: 4px;
+        .quick-stats {
+            font: normal 11px/13px $Helvetica;
+            a {
+                color: $brown;
+                &:hover {
+                    color: $green;
+                }
+            }
+        }
+    }
+}
+
+#hero {
+    background: transparent url('hero-bg.png') top left repeat;
+    border: 1px solid $light-gray;
+    border-style: solid none;
+    color: $black;
+    padding-bottom: 100px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+
+    h2 {
+        span {
+            background: transparent url('hero-bg.png') top left repeat;
+            display: inline-block;
+            padding: 0 10px;
+        }
+    }
+    h2.top {
+        letter-spacing: -2px;
+        font: normal 36px $Mensch;
+        padding: 1.5em 0 1em 0;
+
+        span {
+            background: transparent url('hero-bg.png') top left repeat;
+            display: inline-block;
+            padding: 0 10px;
+        }
+        &:after {
+            background: $black;
+            content: "";
+            display: block;
+            height: 1px;
+            margin-top: -0.5em;
+        }
+    }
+    h1 {
+        letter-spacing: -3px;
+        font: normal 64px $Mensch;
+        padding-bottom: 0.375em;
+    }
+    h2.bottom {
+        padding-bottom: 20px;
+        span.button-container {
+            display: inline-block;
+            padding: 0 10px;
+
+            button {
+                font-size: 14px;
+            }
+        }
+        &:after {
+            background: $black;
+            content: "";
+            display: block;
+            height: 1px;
+            margin-top: -16px;
+        }
+    }
+}
+.box {
+    text-align: center;
+    background: white;
+    margin: -80px auto 0;
+    border: 5px solid rgba($brown, 0.4);
+    width: 480px;
+    max-width: 100%;
+    @include border-radius(3px);
+    position: relative;
+    z-index: 2;
+
+    h1 {
+        font: bold 22px $Helvetica;
+        color: $brown;
+    }
+    h2 {
+        font: bold 14px $Helvetica;
+        text-transform: uppercase;
+        color: $brown;
+    }
+
+    .help {
+        font: normal 14px/18px $Helvetica;
+        color: $black;
+
+        &.with-padding {
+            padding: 10px;
+        }
+    }
+
+    .as-content {
+        padding: 20px;
+        &.left {
+            text-align: left;
+        }
+
+        h1 {
+            padding-bottom: 15px;
+        }
+
+        input {
+            padding: 2px;
+            width: 8em;
+        }
+    }
+
+    .is-suspicious-indicator {
+        display: block;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        font: normal 10px $Helvetica;
+        text-transform: uppercase;
+        color: $black;
+    }
+
+    label.is-suspicious-knob {
+        display: block;
+        position: absolute;
+        top: 2px;
+        right: 5px;
+        font: normal 9px $Helvetica;
+        text-transform: uppercase;
+        color: $black;
+
+        input {
+            position: relative;
+            top: 3px;
+        }
+    }
+
+    .ready {
+        padding-left: 15px;
+    }
+    .number {
+        font: bold 56px $Helvetica;
+    }
+    .unit {
+        font: normal 12px $Helvetica;
+    }
+
+    .on-community {
+        padding: 10px;
+    }
+
+    .on-elsewhere {
+        width: 100%;
+
+        .offset {
+            width: 138px;
+            height: 138px;
+        }
+
+        .picture {
+            width: 138px;
+            height: 138px;
+
+            img {
+                width: 128px;
+                height: 128px;
+
+                /* Without this we are inline-block and we get an extra 4px.
+                 * Is that due to line-height, maybe? */
+                display: block;
+                margin: 5px;
+            }
+        }
+    }
+
+    .on-profile {
+        width: 100%;
+
+        &.is-suspicious {
+            background: $light-red;
+        }
+        .picture {
+            width: 138px;
+            height: 138px;
+
+            img {
+                width: 128px;
+                height: 128px;
+
+                /* Without this we are inline-block and we get an extra 4px.
+                 * Is that due to line-height, maybe? */
+                display: block;
+                margin: 5px;
+            }
+        }
+        td {
+            text-align: left;
+        }
+        .pad-sign {
+            padding-left: 36px;
+        }
+        /*
+        form {
+            margin-bottom: 0;
+            margin-top: 12px;
+
+            input {
+                width: 30%;
+            }
+        }
+        */
+    }
+
+    .nav {
+        padding: 5px;
+
+        h2 {
+            color: $black;
+            font: bold 10px $Helvetica;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin: 0 0 3px;
+        }
+
+        button.larger {
+            font-size: 14px;
+        }
+
+        &.level-1 {
+            border-top: 1px solid rgba($brown, 0.2);
+            background: $lighter-gray;
+
+            #payment-prompt {
+                display: none;
+                margin: 10px 0 5px;
+
+                &.needed {
+                    display: block;
+                }
+                &.really-needed {
+                    display: block;
+                }
+            }
+        }
+
+        &.level-2 {
+            border-top: 1px solid rgba($brown, 0.5);
+            background: $light-gray;
+        }
+
+        &.level-3 {
+            background: black;
+            text-align: center;
+            padding: 5px;
+            color: white;
+
+            a {
+                display: block;
+                color: white;
+            }
+        }
+    }
+
+    .on-confirm {
+        padding: 35px 0 0;
+
+        h2 {
+            font: bold 14px $Helvetica;
+            text-transform: uppercase;
+            margin: 35px 0 8px;
+        }
+        .nav {
+            margin: 35px 0 0;
+            h2 {
+                margin: 8px 0;
+            }
+        }
+
+        .scenario {
+            margin: 0 auto;
+        }
+        .scenario td {
+            padding: 6pt;
+            width: 33%;
+        }
+        #nix {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -16px 0 0 -16px;
+        }
+        .participant {
+            position: relative;
+            width: 96pt;
+            display: inline-block;
+            border: 2px solid $brown;
+            border-radius: 6pt;
+            font: normal 12px $Helvetica;
+            color: $brown;
+            background: white url("clipped-heart.png") bottom right no-repeat;
+            text-align: left;
+            overflow: hidden;
+        }
+        .participant-padding {
+            display: block;
+            padding: 6pt 0 6pt 9pt;
+        }
+        .participant img, img.platform-icon {
+            width: 12px;
+            height: 12px;
+        }
+        .participant b {
+            font-size: 11pt;
+        }
+        .participant td {
+            padding: 0;
+        }
+        .participant th {
+            font-weight: normal;
+        }
+        .other, .abandoned {
+            font: normal 10px $Helvetica;
+        }
+        .abandoned {
+            text-align: center;
+            overflow: hidden;
+        }
+        .nix {
+            border-color: $light-brown;
+        }
+        .other b {
+            font-size: 9pt;
+        }
+    }
+
+
+    .on-form {
+        text-align: left;
+
+        .constrain-width {
+            margin: 0 auto 35px;
+            width: 300px;
+        }
+        form {
+            h2 {
+                font: bold 14px $Helvetica;
+                text-transform: uppercase;
+                margin: 35px 0 8px;
+            }
+        }
+
+        .half {
+            width: 150px;
+        }
+        .full {
+            clear: both;
+            text-align: right;
+            padding-top: 5px;
+        }
+        #other {
+            font: normal 9pt/14pt Arial, sans-serif;
+            color: #00E;
+            cursor: pointer;
+            margin-right: 1em;
+        }
+        #other:hover {
+            text-decoration: underline;
+        }
+        .left {
+            float: left;
+        }
+        .right {
+            float: left;
+        }
+        label {
+            display: block;
+            font: normal 10px $Helvetica;
+            margin: 8px 0 0;
+            padding: 0;
+            text-transform: uppercase;
+        }
+        input {
+            font: normal 11pt/14pt $Helvetica;
+            width: 292px;
+            margin: 0;
+            padding: 3px;
+            border: 1px solid $light-brown;
+            outline: none;
+        }
+        input.disabled {
+            color: $light-brown;
+        }
+
+        .half input {
+            width: 137px;
+        }
+        .right.half label,
+        .right.half input {
+            margin-left: 5px;
+        }
+        input:focus {
+            border-color: $green;
+        }
+        .float {
+            float: left;
+        }
+        .city          input { width: 137px; }
+        .state         input { width: 43px; }
+        .zip           input { width: 75px; }
+        .card_number   input { width: 139px; }
+        .cvv           input { width: 43px; }
+        input.expiration_month { width: 35px; }
+        input.expiration_year  { width: 49px; margin-left: 1px !important; }
+        .not-first label,
+        .not-first input {
+            margin-left: 10px;
+        }
+        .nav {
+            text-align: center;
+        }
+        #feedback {
+            .details li {
+                margin: 0;
+                padding: 0 0 0 2em;
+                text-indent: -2em;
+                font: normal 12px $Helvetica;
+            }
+        }
+        select {
+            font-size: 12.15px; // hack for Chosen to get a 292px width
+        }
+    }
+}
+.payment-footer {
+    font: normal 12px $Helvetica;
+    text-align: center;
+}
+
+#leaderboard {
+    @include clearfix;
+    width: leaderboard-width(3);
+    margin: 0 auto;
+}
+
+.people {
+    width: $people-column-width * 3;
+    margin-left: $people-column-gutter;
+    float: left;
+
+    &:first-child {
+        margin: 0;
+    }
+
+    ul {
+        li {
+            float: left;
+            margin: 0;
+            padding: 2px;
+            width: $people-column-width;
+        }
+    }
+}
+
+#page {
+    padding: 20px 0 0;
+    background: white;
+
+    h1 {
+        color: $green;
+        font: normal 35px $Mensch;
+        letter-spacing: -2px;
+        margin: 35px 0 20px 0;
+        text-transform: uppercase;
+    }
+
+    h2, #members th {
+        color: $brown;
+        font: bold 14px $Helvetica;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin: 35px 0 8px;
+    }
+}
+
+.col {
+    width: auto;
+    margin: 0 auto;
+}
+
+.col0, .col1, .col2 {
+    width: 50%;
+    max-width: 100%;
+}
+
+.col0 {
+    margin: 0 auto;
+}
+
+.col1 {
+    float: left;
+    padding-right: 3%;
+}
+
+.col2 {
+    float: right;
+    padding-left: 3%;
+}
+
+.more-container {
+    @include clearfix;
+    text-align: center;
+    padding-top: 20px;
+}
+
+#footer {
+    @include clearfix;
+    margin: 4em 0 1em;
+    border-top: 1px solid $black;
+    padding: 1em 0 0;
+    text-align: right;
+    font-size: 13px;
+    line-height: 13px;
+
+    .social {
+        float: left;
+    }
+
+    ul {
+        float: right;
+        @include clearfix;
+    }
+    li {
+        float: left;
+        margin: 0;
+
+        &:before {
+            content: "|";
+            padding: 0 0.4em;
+        }
+
+        &:first-child:before {
+            content: none;
+        }
+    }
+}
