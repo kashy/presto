@@ -76,7 +76,7 @@ title = "About"
     <h2>Contact Us</h2>
 
     <p style="width: 45%; float: left">
-      <b>Presto, LLC</b><br />
+      <b>Presto</b><br />
       170-422 Richards Street<br />
       Vancouver, BC V6B 2Z9<br />
       Canada<br />
@@ -93,8 +93,7 @@ title = "About"
 
     <a name="get-involved"></a>
     <h2>Careers</h2>
-
-    <p>More information about careers at Presto will be posted soon</p>
+    <p>No openings at this time, check back soon!</p>
 
 </div>
 {% endblock %}

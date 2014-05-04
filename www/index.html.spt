@@ -91,9 +91,9 @@ receivers = website.db.all("""
 {% endblock %}
 
 {% block heading %}
-    <h2 class="top"><span>Sustainable Crowdfunding</span></h2>
+    <h2 class="top"><span>Engage Your Audience and Support Your Influencers</span></h2>
     <h1>
-        <span>Support Your Influencers</span>
+        <span>Join The Movement and Sign Up Today</span>
     </h1>
     <h2 class="bottom">
         <span class="button-container">
